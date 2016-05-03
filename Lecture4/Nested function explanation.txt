@@ -1,0 +1,65 @@
+def foo(x):
+   def bar(x):
+      return x + 1
+   return bar(x * 2)
+
+foo(3)
+
+
+So the call to bar(x * 2) is part of the foo(x) function.
+When we call foo(x), def bar(x): return x + 1 is evaluated first, defining the bar(x) function. 
+This function is then called by the bar(x * 2) line.
+
+
+The basic layout of how the program executes;
+
+foo(x) is defined
+
+foo(3) is called
+
+bar(x) is defined (by the foo function)
+
+bar(6) is called
+
+bar(6) returns 7
+
+foo(3) returns 7
+
+--------------------------------
+
+def foo (x):
+   def bar (z):
+      return z + x
+   return bar(3)
+
+foo(2)
+
+
+foo(x) is defined
+foo(2) is called
+bar(z) is defined 
+bar(3) is called
+bar(3) returns 5
+foo(2) returns 5
+
+----------------------------------------
+
+x = 12
+def g(x):
+  x = x + 1
+  def h(y):
+     return x + y
+  return h(6)
+
+g(x)
+ 
+
+g(x)
+g(12) is called
+x = 12 + 1 = 13
+h(y) is defined
+h(6) is called
+h(6) return 13 + 6 = 19
+g(12) return 19
+
+

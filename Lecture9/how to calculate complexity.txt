@@ -1,0 +1,78 @@
+mathematical representation of for loop as:
+
+ n(sum_of_outer_loop_steps + n(sum_of_nested_loop_steps))
+
+-----------------------------------------------------------
+
+ 1      def program3(L1, L2):
+ 2          intersection = []
+ 3          for elt in L1:
+ 4              if elt in L2:
+ 5                  intersection.append(elt)
+ 6          return intersection
+
+
+- for elt in L1 iterates n times:
+
+n
+
+- assigning elt takes 1 step each time:
+
+n(1)
+
+- if elt in L2 takes n steps each time:
+
+n(1+n)
+
+- append takes 1 steps each time:
+
+n(1+n+1)
+
+- add in initial assignment and return statement:
+
+1 + n(1+n+1) + 1
+
+
+- so:
+
+2 + 2n + n ^ 2
+
+
+
+-------------------------------------------------------------
+
+(1) multiples = []
+(2) for x in L:
+(3)     for y in L:
+(4)         multiples.append(x*y)
+(5) return multiples
+
+
+the way it finally made sense to me was like this, => denotes building our equation
+
+in (1) we have 1 operation => +1
+
+in (2) we enter a loop that will run n times i.e. n*(some operations) => +n*(
+
+still in (2) first we assign item of L to x => +1
+
+in (3) we hit the second loop that will run n times, so as before => +n*(
+
+still in (3) assign item of L to y => +1
+
+in (4) we have append and x*y operations => +2
+
+in (5) we have dropped out of both loops so => )) (close our brackets)
+
+still in (5) we have one operation => +1
+
+now if you put all those => together you get:
+
++1 +n*(+1 +n*(+1 +2)) +1
+
+which is 1 + n*(1+n*(3)) + 1
+
+which is n*(3n + 1) + 2
+
+which is 3n^2 + n + 2
+

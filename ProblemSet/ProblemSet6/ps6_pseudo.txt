@@ -1,0 +1,29 @@
+=========================
+Problem 2: findBestShifts
+=========================
+
+1. Set the maximum number of real words found to 0.
+2. Set the best shift to 0.
+3. For each possible shift from 0 to 26:
+	4. Shift the entire text by this shift.
+	5. Split the text up into a list of the individual words.
+	6. Count the number of valid words in this list.
+	7. If this number of valid words is more than the largest number of
+	   real words found, then:
+		8. Record the number of valid words.
+		9. Set the best shift to the current shift.
+	10. Increment the current possible shift by 1. Repeat the loop
+	   starting at line 3.
+11. Return the best shift.
+
+
+Now that you have all the pieces to the puzzle, please use them to decode the file story.txt.
+In the skeleton file, you will see a method getStoryString() that will return the encrypted version of the story.
+Fill in the following function;
+
+it should create the wordList,
+obtain the story,
+and then decrypt the story.
+
+Be sure you've read through the whole file to see what helper functions we've defined for you
+that may assist you in these tasks! This function will be only a few lines of code (our solution does it in 4 lines).
